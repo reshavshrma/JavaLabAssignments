@@ -1,0 +1,22 @@
+class SY2022bit061 {
+	public static void main(String args[]) {
+		String reg_no = "2022bit061";
+		SY2022bit061 check = new SY2022bit061();
+		int validCount = check.getValidRegistrationsCount(new String[] {reg_no});
+		System.out.println(validCount);
+	}
+	
+	public int getValidRegistrationsCount(String[] registrations) {
+		int validCount = 0;
+		for(String regNumber:registrations) {
+			if(isValidRegistration(regNumber)) {
+				validCount++;
+			}
+		}
+		return validCount;
+	}
+	
+	public boolean isValidRegistration(String regNumber) {
+		return regNumber.startsWith("2022") && regNumber.contains("bit") && regNumber.endsWith("061");
+	}
+}
